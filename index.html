@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabinete de Numerología</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+
+<body>
+  <header>
+    <div class="titulo-principal">
+      <h1>GABINETE DE NUMEROLOGIA</h1>
+      <p class="subtitulo">Numerología - Energía colectiva</p>
+    </div>
+    <nav class="nav">
+      <a href="#que-es">¿Qué es la Numerología?</a>
+    </nav>
+    <p class="fecha-hoy" id="fecha"></p>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Bienvenido a la Numerología</h2>
+      <p>
+        Cada número encierra un mensaje. En la numerología, exploramos cómo tu fecha de nacimiento y tu nombre reflejan
+        aspectos profundos de tu personalidad y tu camino de vida.
+        A través de este lenguaje simbólico, puedes conocer tus talentos, entender tus retos y descubrir qué energías te
+        acompañan en cada etapa.
+      </p>
+    </section>
+
+    <section id="que-es" class="contenido">
+      <h2>¿Qué es la Numerología?</h2>
+      <p>
+        La numerología es una herramienta de autoconocimiento que estudia el significado oculto de los números en
+        nuestra vida.
+        A través de ciertos cálculos simples, podemos revelar patrones que nos ayudan a entender mejor quiénes somos y
+        hacia dónde vamos.
+      </p>
+
+      <div class="tarjetas">
+        <div class="tarjeta">
+          <img src="año.webp" alt="Año calendario">
+          <p>Año Calendario</p>
+        </div>
+        <div class="tarjeta">
+          <img src="personal.png" alt="Número personal">
+          <p>Número Personal</p>
+        </div>
+        <div class="tarjeta">
+          <img src="destino.png" alt="Número del destino">
+          <p>Número de Destino</p>
+        </div>
+        <div class="tarjeta">
+          <img src="nombre.png" alt="Número del nombre">
+          <p>Número del Nombre</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="menu-calc">
+      <h2>Menú de cálculo numerológico</h2>
+      <form id="formularioNumerologia">
+        <label>Nombre completo:</label>
+        <input type="text" name="nombre" required />
+        <label>Apellidos:</label>
+        <input type="text" name="apellido" required />
+        <label>Fecha de nacimiento:</label>
+        <input type="date" name="fecha" required />
+        <label>¿Qué deseas calcular?</label>
+        <select name="calculo">
+          <option value="año">Año Calendario</option>
+          <option value="personal">Número Personal</option>
+          <option value="destino">Número del Destino</option>
+          <option value="nombre">Número del Nombre</option>
+          <option value="alma">Número del Alma</option>
+          <option value="expresion">Expresión del Alma</option>
+          <option value="proyecto">Proyecto sentido</option>
+          <option value="añopersonal">Año Personal</option>
+          <option value="mespersonal">Mes Personal</option>
+        </select>
+        <button type="submit">Calcular</button>
+      </form>
+      <div id="resultadoNumerologico" style="margin-top: 20px; display: none;">
+        <p>
+          Tu número <span id="tipoResultado"></span> es:
+          <span id="valorResultado" style="color: red; font-weight: bold;"></span>
+          <button onclick="verInterpretacion()" style="margin-left: 10px;">Interpretación...</button>
+        </p>
+        <p style="font-size: 0.9em; color: gray;">
+        </p>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>2025 Gabinete de Numerología - Todos los derechos reservados por Sergito</p>
+  </footer>
+
+  <script src="calculos.js"></script>
+  <script>
+    const hoy = new Date();
+    const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById("fecha").innerText = hoy.toLocaleDateString("es-ES", opciones);
+  </script>
+</body>
+
+</html>
